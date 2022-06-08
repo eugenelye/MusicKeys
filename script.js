@@ -5,7 +5,7 @@ window.addEventListener("keydown", keyDown);
 
 //creating the start button
 document.querySelector('.start').addEventListener("click", startGame);
-document.querySelector('.restart').addEventListener("click", restartGame);
+document.getElementById("canvas").style.visibility = "hidden";
 
 //this defines the button colors
 const colors = ["red", "blue", "green","yellow", "cyan"];
@@ -16,37 +16,34 @@ const rectangle = [];
 //inital conditions of the game
 let score = 0;
 let speed = 3;
-let time = 10;
+let time = 20;
 
-//onclick function to start the game
-function restartGame () {
-  
-  document.getElementById("canvas").style.display = "inital";
-  setInterval(fallingRect,30);
-  
 
-}
 
+//function of the start game button
 function startGame () {
 
   setInterval(fallingRect,30);
+  document.getElementById("canvas").style.visibility = "visible";
 
 
-  }
-
-let countDown = setInterval(function(){
+    let countDown = setInterval(function(){
   time--;
   if (time === 0) {
     clearInterval(countDown);
     alert(`Time is up! Your score is ${score}!`);
-    document.getElementById("canvas").style.display = "none";
-
+    score = 0; 
+    document.getElementById("canvas").style.visibility = "hidden";
   }
-
-
 }, 1000);
+document.querySelector("#instructions").style.visibility = "hidden";
+document.querySelector("#words").style.visibility = "hidden";
+  }
+//function when the games end (timer = 0)
 
-//this defines the button width size, which is 1/3 width of the canvas
+
+
+//this defines the button width size, which is 1/5 width of the canvas and button height. 
 const buttonWidth = [canvas.width / 5, canvas.width / 5, canvas.width / 5, canvas.width / 5, canvas.width / 5];
 const buttonHeight = [canvas.width / 16, canvas.width / 16, canvas.width / 16, canvas.width / 16, canvas.width / 16];
 
@@ -75,7 +72,7 @@ function drawButtons() {
 }
 
 function drawRect() {
-  // This function will draw the rectangle block on the screen based on what is set in the rectangle[]
+  // This function will draw the rectangle block on the screen based color and position.
   for (let i = 0; i < rectangle.length; i++) {
     ctx.beginPath();
     ctx.fillStyle = colors[rectangle[i][0]];
@@ -89,7 +86,7 @@ function drawRect() {
 }
 
 function makeRect() {
-  // This function will random set a number to the blocks[] (0 = red, 1 = blue, 2 = green). 
+  // This function will random set a number to the blocks[] (0 = red, 1 = blue, 2 = green, 3 = yellow, 4 =cyan). 
   // if red is randomised, it will be placed at the left. position = 0 will be assigned to the rectangle y position every time. 
   // - Note: This will be call every 3000/speed milliseconds
   rectangle.push([Math.floor(Math.random() * 5), 0]);
@@ -112,7 +109,7 @@ function fallingRect() {
   
   //this makes the rectangle fall at the assigned speed. the y position of the rectangle changes by 2 px at every 30ms. 
     rectangle[i][1] += speed;
-  
+
 
     
   
@@ -188,5 +185,6 @@ function keyDown() {
   }
 
 
-}
+
+  }
 
