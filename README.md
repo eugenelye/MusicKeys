@@ -29,3 +29,5 @@ HTML CSS and Javascript are the programming langagues used for this project.
 ## Known Problems of The Game
 
 The score and the game over are shown in a popup alert function. It can be improved by showing it as a box of text, beautifying the score and the interface of the game. The interface of the game can also be improved by allowing game users to change the game time and the speed of the falling blocks.
+
+There are also some addition on misses randomly. There may be some error in the definition of misses. 
