@@ -4,29 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game</title>
+    <title>Guitar Hero</title>
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
+    
+    <audio>
+      <source src="./game.mp3">
+    </audio>
     <div class="button">
       <button class="start">Start Game!</button>
     </div>
+    <div class="button">
+      <button class="restart">Restart Game!</button>
+    </div>
     <div>
-      <h2 id = "instructions">Instructions</h2>
-      </div>
-      <div id = "words">
+      <h2 id="instructions"><strong>Instructions</strong></h2>
+    </div>
+    <div id="words">
       <p>
         Welcome to a simple Guitar Hero Game! Press the keys as shown on the
-        screen when the same color matches the position of the button! You gain
-        a score the falling block matches the button position! You have 60
-        seconds. Press the "Start Game" button to start!
+        screen when the same color matches the position of the keys! You gain a
+        score the falling block matches the key position! You have 60 seconds.
+        Press the "Start Game" button to start!
       </p>
     </div>
-
     <h2 id="score"></h2>
     <h2 id="speed"></h2>
     <h2 id="time"></h2>
-
+    <h2 id="miss"></h2>
     <canvas id="canvas" width="600vh" height="800vh"></canvas>
     <script src="script.js" charset="utf-8"></script>
   </body>

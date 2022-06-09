@@ -9,41 +9,76 @@
   background-color: black;
 }
 
-.button {
-  position: absolute;
-  top: 50%;
-  left: 45%;
-}
+
+
+
 
 #instructions {
+  position: absolute;
+  top: 10%;
+  left: 22%;
   margin: auto;
   width: 50%;
   padding: 10px;
   background: #999ff0;
   text-align: center;
+  border: black;
+  border-style: solid;
+  border-width: 5px;
+}
+
+audio {
+  display: none;
 }
 
 #words {
-  margin: auto;
-  width: 50%;
+  width: 600px;
+  position: absolute;
+  top: 20%;
+  left: 27%;
   padding: 10px;
   background: #999ff0;
   text-align: center;
+  color: #4c4a37;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+  margin: 0 0 24px;
+  border: black;
+  border-style: solid;
+  border-width: 5px;
 }
 
 #score {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 14px;
+  position: absolute;
+  left: 28%;
+  top: 10%;
 }
 
 #speed {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 14px;
+  position: absolute;
+  left: 28%;
+  top: 13%;
 }
 
 #time {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 14px;
+  position: absolute;
+  left: 28%;
+  top: 16%;
+}
+
+#miss {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  position: absolute;
+  left: 28%;
+  top: 19%;
 }
 
 body {
@@ -52,6 +87,9 @@ body {
 }
 
 .start {
+  position: absolute;
+  top: 50%;
+  left: 44%;
   background-clip: padding-box;
   background-color: cyan;
   border: 1px solid transparent;
@@ -70,7 +108,6 @@ body {
   margin: 0;
   min-height: 3rem;
   padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
   text-decoration: none;
   transition: all 250ms;
   user-select: none;
@@ -92,6 +129,53 @@ body {
 
 .start:active {
   background-color: cyan;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+.restart {
+  position: absolute;
+  top: 60%;
+  left: 44%;
+  background-clip: padding-box;
+  background-color: pink;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.restart:hover,
+.restart:focus {
+  background-color: pink;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.restart:hover {
+  transform: translateY(-1px);
+}
+
+.restart:active {
+  background-color: pink;
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   transform: translateY(0);
 }
