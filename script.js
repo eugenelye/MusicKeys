@@ -48,7 +48,6 @@ function startGame() {
       clearInterval(fall);
       x.pause();
       alert(`Time is up! Your score is ${score}!`);
-      score = 0;
       document.getElementById("canvas").style.display = "none";
       document.querySelector("#score").style.display = "none";
       document.querySelector("#speed").style.display = "none";
