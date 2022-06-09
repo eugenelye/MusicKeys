@@ -153,7 +153,7 @@ function fallingRect() {
     rectangle[i][1] += speed;
 
     // when the rectangle made goes beyond half of the button height, it is deleted.
-    if (rectangle[i][1] > canvas.height) {
+    if (rectangle[i][1] > 800) {
       rectangle.splice(i, 1);
       miss += 1;
     }
