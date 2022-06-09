@@ -56,7 +56,7 @@ function startGame() {
       document.querySelector(".start").style.display = "none";
       document.querySelector(".restart").style.visibility = "visible";
     }
-    if (miss >= 5) {
+    if (miss >= 10) {
       clearInterval(countDown);
       clearInterval(fall);
       x.pause();
