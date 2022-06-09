@@ -3,7 +3,6 @@ const ctx = canvas.getContext("2d");
 
 const x = document.querySelector("audio");
 
-
 //event key creation for game playing
 window.addEventListener("keydown", keyDown);
 
@@ -28,18 +27,17 @@ const rectangle = [];
 //inital conditions of the game
 let score = 0;
 let speed = 3;
-let time = 15;
+let time = 30;
 let miss = 0;
 
 //function of the start game button
 function startGame() {
-
   x.play();
   //this function makes the rectangle
   setTimeout(makeRect, 0);
 
   //This cause the rect to fall at speed of 3px every 30 milliseconds -> setInterval of fallingRect at 30 ms.
-  const falling = setInterval(fallingRect, 30);
+  const fall = setInterval(fallingRect, 30);
   document.getElementById("canvas").style.visibility = "visible";
 
   //function when the games end (timer = 0)
@@ -47,7 +45,7 @@ function startGame() {
     time--;
     if (time === 0) {
       clearInterval(countDown);
-      clearInterval(falling);
+      clearInterval(fall);
       x.pause();
       alert(`Time is up! Your score is ${score}!`);
       score = 0;
@@ -59,11 +57,11 @@ function startGame() {
       document.querySelector(".start").style.display = "none";
       document.querySelector(".restart").style.visibility = "visible";
     }
-    if (miss >= 3) {
+    if (miss >= 5) {
       clearInterval(countDown);
-      clearInterval(falling);
+      clearInterval(fall);
       x.pause();
-      alert(`Game Over!`)
+      alert(`Game Over!`);
       document.getElementById("canvas").style.display = "none";
       document.querySelector("#score").style.display = "none";
       document.querySelector("#speed").style.display = "none";
@@ -72,7 +70,6 @@ function startGame() {
       document.querySelector(".start").style.display = "none";
       document.querySelector(".restart").style.visibility = "visible";
       miss = 0;
-
     }
   }, 1000);
   document.querySelector("#instructions").style.visibility = "hidden";
@@ -184,9 +181,7 @@ function keyDown() {
       if (rectangle[0][1] >= 700) {
         score += 1;
         rectangle.splice(0, 1);
-      } else {
-        miss += 1;
-      }
+      } 
     }
   }
   // when x is pressed, if the position of the rectangle falling is at 1 (centre) and within the height of the button
@@ -196,9 +191,7 @@ function keyDown() {
       if (rectangle[0][1] >= 700) {
         score += 1;
         rectangle.splice(0, 1);
-      } else {
-        miss += 1;
-      }
+      } 
     }
   }
   // when c is pressed, if the position of the rectangle falling is at 2 (right) and within the height of the button
@@ -208,9 +201,7 @@ function keyDown() {
       if (rectangle[0][1] >= 700) {
         score += 1;
         rectangle.splice(0, 1);
-      } else {
-        miss += 1;
-      }
+      } 
     }
   }
 
@@ -219,9 +210,7 @@ function keyDown() {
       if (rectangle[0][1] >= 700) {
         score += 1;
         rectangle.splice(0, 1);
-      } else {
-        miss += 1;
-      }
+      } 
     }
   }
 
@@ -230,9 +219,7 @@ function keyDown() {
       if (rectangle[0][1] >= 700) {
         score += 1;
         rectangle.splice(0, 1);
-      } else {
-        miss += 1;
-      }
+      } 
     }
   }
 }
