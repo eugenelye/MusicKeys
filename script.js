@@ -1,22 +1,25 @@
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
+//keeping canvas hidden before pressing start
+document.getElementById("canvas").style.visibility = "hidden";
+document.querySelector(".restart").style.visibility = "hidden";
+
+//Audio for the game
 const x = document.querySelector("audio");
+x.volume = 0.3;
 
 //event key creation for game playing
 window.addEventListener("keydown", keyDown);
 
-//creating the start button
+//creating the start and restart button
 document.querySelector(".start").addEventListener("click", startGame);
 document.querySelector(".restart").addEventListener("click", reload);
 
+//refreshes the page
 function reload() {
   location.reload();
 }
-
-//keeping canvas hidden before pressing start
-document.getElementById("canvas").style.visibility = "hidden";
-document.querySelector(".restart").style.visibility = "hidden";
 
 //this defines the button colors
 const colors = ["red", "blue", "green", "yellow", "cyan"];
@@ -26,7 +29,7 @@ const rectangle = [];
 
 //inital conditions of the game
 let score = 0;
-let speed = 3;
+let speed = 4;
 let time = 30;
 let miss = 0;
 
@@ -134,8 +137,8 @@ function drawRect() {
 }
 
 function makeRect() {
-  // This function will random set a number to the blocks[] (0 = red, 1 = blue, 2 = green, 3 = yellow, 4 =cyan).
-  // - Note: This will be call every 3000/speed milliseconds
+  // This function will random set a number to the blocks[] (0 = red, 1 = blue, 2 = green, 3 = yellow, 4 =cyan) 
+  //and called every 3000/speed
   rectangle.push([Math.round(Math.random() * 5), 0]);
   setTimeout(makeRect, 3000 / speed);
 }
@@ -153,7 +156,7 @@ function fallingRect() {
     rectangle[i][1] += speed;
 
     // when the rectangle made goes beyond half of the button height, it is deleted.
-    if (rectangle[i][1] > 800) {
+    if (rectangle[i][1] > canvas.height) {
       rectangle.splice(i, 1);
       miss += 1;
     }
