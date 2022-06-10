@@ -29,10 +29,10 @@ HTML CSS and Javascript are the programming langagues used for this project.
 
 ## Challenges of the Project    
 
-# Making the rectangles falling randomly
+### Making the rectangles falling randomly
 Initially, the rectangles were created randomly and condition were set to make it fall again once it reaches the bottom. However this is not random as the block which fall to the botom first will be generated again on top, creating a standard loop. After that it was changed to making rectangles in a setTimeout function so that it is generated every 3000/speed timing.
 
-# Making the rectangles stop falling after the time ends or misses reach a certain number.
+### Making the rectangles stop falling after the time ends or misses reach a certain number.
 I could not make the animation stop as initially, I put the function of fallRect in the clear interval. After realising that it needs to be asssigned to a variable, the clearInterval works. This is one of the things I learned in doing this project.
 
 
