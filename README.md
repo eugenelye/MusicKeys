@@ -2,7 +2,7 @@
 
 ## Project Description
 
-[Click to play!](https://eugenelye.github.io/Project1/)
+[Click to play!](https://eugenelye.github.io/MusicKeys/)
 
 This project is about creating a game called "Guitar Hero". It is simplified version of the Guitar Hero game. This game was chosen for the project as it is a game where most people will know how to play and it is simple for children to play as well. The vibrant colors of the game also create a feel good factor for the players.
 
